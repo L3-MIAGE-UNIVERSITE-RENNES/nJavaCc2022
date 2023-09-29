@@ -9,29 +9,24 @@ public class Commune {
 
     // constructors
     public Commune(){};
-    public Commune(String name, int department, int postalCode, int surface, int population){
-        try {
-            if(department < 1 || department > 99){
-              throw new IllegalAccessException("department should be between 1 and 99");
-            }
-
-            if(surface < 0 || population < 0 ){
-                throw new IllegalAccessException("Ce nombre est strictememnt positif");
-            }
-
-            if(department != postalCode / 1000 ){
-                throw new IllegalAccessException("Le departement ne corresponds pas au code postal");
-            }
-
-            this.name = name;
-            this.department = department;
-            this.population = population;
-            this.surface = surface;
-            this.postalCode = postalCode;
-
-        } catch (Exception e){
-            System.out.println(e.getMessage());
+    public Commune(String name, int department, int postalCode, int surface, int population) throws IllegalAccessException{
+        if(department < 1 || department > 99){
+            throw new IllegalAccessException("department should be between 1 and 99");
         }
+
+        if(surface < 0 || population < 0 ){
+            throw new IllegalAccessException("Ce nombre est strictememnt positif");
+        }
+
+        if(department != postalCode / 1000 ){
+            throw new IllegalAccessException("Le departement ne corresponds pas au code postal");
+        }
+
+        this.name = name;
+        this.department = department;
+        this.population = population;
+        this.surface = surface;
+        this.postalCode = postalCode;
     }
 
     // setters

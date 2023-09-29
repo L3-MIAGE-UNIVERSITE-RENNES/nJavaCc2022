@@ -11,7 +11,7 @@ public class Main {
     public static double sommeCosineTaylor(double x, int n){
         double somme = 1;
         for(int k = 1; k <= n; k++){
-            somme = (double) (somme + (Math.pow(-1, k)*Math.pow(x, 2*k)/factorial(2*k)));
+            somme = (somme + (Math.pow(-1, k)*Math.pow(x, 2*k)/factorial(2*k)));
         }
         return somme;
     }

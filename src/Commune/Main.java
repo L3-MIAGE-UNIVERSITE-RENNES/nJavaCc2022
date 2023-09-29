@@ -2,17 +2,21 @@ package Commune;
 
 public class Main {
     public static void main(String[] args){
-          Commune commune1 = new Commune("Saint-Nazaire", 46, 46600, 23990,100356);
-          Commune commune2 = new Commune("Saint-Nazaire", 42, 42300, 207780,322462);
-          Commune commune3 = new Commune("Rennes", 35, 35000, 2000,1000000);
+        try {
+            Commune commune1 = new Commune("Saint-Nazaire", 47, 46600, 23990,100356);
+            Commune commune2 = new Commune("Saint-Nazaire", 42, 42300, 207780,322462);
+            Commune commune3 = new Commune("Rennes", 35, 35000, 2000,1000000);
 
-          Commune morePopulated = Commune.morePopulated(commune1, commune3);
-          System.out.println("More populated -> " + morePopulated);
-          Commune[] array = {commune1, commune2, commune3};
-          Commune leastPopulated = leastPopulated(array);
-          System.out.println("Least populated -> " + leastPopulated);
-          int sameName = sameName(array, "Saint-Nazaire");
-          System.out.println("Same name -> " + sameName);
+            Commune morePopulated = Commune.morePopulated(commune1, commune3);
+            System.out.println("More populated -> " + morePopulated);
+            Commune[] array = {commune1, commune2, commune3};
+            Commune leastPopulated = leastPopulated(array);
+            System.out.println("Least populated -> " + leastPopulated);
+            int sameName = sameName(array, "Saint-Nazaire");
+            System.out.println("Same name -> " + sameName);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
     public static Commune leastPopulated(Commune[] array){
