@@ -9,17 +9,17 @@ public class Commune {
 
     // constructors
     public Commune(){};
-    public Commune(String name, int department, int postalCode, int surface, int population) throws IllegalAccessException{
+    public Commune(String name, int department, int postalCode, int surface, int population) throws IllegalArgumentException{
         if(department < 1 || department > 99){
-            throw new IllegalAccessException("department should be between 1 and 99");
+            throw new IllegalArgumentException("department should be between 1 and 99");
         }
 
         if(surface < 0 || population < 0 ){
-            throw new IllegalAccessException("Ce nombre est strictememnt positif");
+            throw new IllegalArgumentException("Ce nombre est strictememnt positif");
         }
 
         if(department != postalCode / 1000 ){
-            throw new IllegalAccessException("Le departement ne corresponds pas au code postal");
+            throw new IllegalArgumentException("Le departement ne corresponds pas au code postal");
         }
 
         this.name = name;
